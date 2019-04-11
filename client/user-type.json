@@ -1,0 +1,15 @@
+{
+
+   "_id":1,
+    "name":"ravii",
+    "email":"raviikiran@gmail.com",
+    "contact":8888888888,
+    "address":"saiful",
+    "city":"solapur",
+    "state":"maharashtra",
+    "qualification":"BE-CSGO",
+    "domain":"web technology",
+    "platform":"unix",
+   "username":"",
+   "passwordhash":""
+}

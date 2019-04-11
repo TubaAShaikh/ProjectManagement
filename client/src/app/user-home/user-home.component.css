@@ -1,0 +1,59 @@
+.project-card
+{
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+    width:95%;
+
+    border: 4px solid #aaaaaa;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px #cccccc;
+    background:rgba(145, 198, 241, 0.308);
+    color: dodgerblue;
+}
+
+.project-card h1
+{
+    padding: 10px 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.task-card
+{
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+    width:95%;
+
+    border: 4px solid #aaaaaa;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px #cccccc;
+    background: #fafafa;
+    transition: 1s;
+    color: #5060ff;
+    min-height: 200px;
+}
+
+.task-card:hover
+{
+    color: white;
+    background: #a7d7f7;
+    transition: 1s;
+}
+
+.task-card h2
+{
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.task-card h4
+{
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: 400;
+}

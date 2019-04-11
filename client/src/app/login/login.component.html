@@ -1,0 +1,40 @@
+<!--<p class="h1"><i>login</i></p>
+<table class="table table-striped table-dark">
+  <tr>
+    <td>username</td>
+    <td><input type="text" [(ngModel)]="user.username" /></td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td><input type="password" [(ngModel)]="user.password" /></td>
+  </tr>
+  <tr>
+    <td><button type="button" class="btn btn-success btn-lg" (click)="onlogin()">Login</button> New Here?<button type="button" class="btn btn-primary btn-lg"  (click)="onsignup()">Sign Up</button></td>
+    <td></td>
+  </tr>
+</table>
+<div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+-->
+
+<body>
+  <div class="login-popup-wrap new_login_popup"> 
+                          <div class="login-popup-heading text-center">
+                            <h2 ><strong>Project Management System</strong></h2>
+                            <h4><i class="fa fa-lock" aria-hidden="true"></i> Login </h4>                        
+                          </div>
+                          <form id="loginMember" role="form" action="" method="post">
+                              <div>
+                                  <input type="text" class="form-control" [(ngModel)]="user.username" name="username" placeholder="Username">
+                              </div>
+                              <div >
+                                  <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
+                              </div>
+                              <button type="button" class="btn btn-default login-popup-btn" (click)='onlogin()'>Login</button>
+                              <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+                          </form>
+                          <div class="form-group text-center">
+                          <a class="pwd-forget" href="javascript:void(0)" id="open_forgotPassword">Forgot Password</a>
+                          </div>
+                         
+                      </div>
+                    </body>

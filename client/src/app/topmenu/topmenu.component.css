@@ -1,0 +1,75 @@
+.topmenu
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2rem;    
+    background: #1C2331;
+    color: white;
+}
+
+.topmenu .leftdiv
+{
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.topmenu .rightdiv
+{
+    width: 700px;
+    float: right;
+    /* height: 100%; */
+    /* text-align: right; */
+}
+
+.topmenu .rightdiv div
+{
+    margin: 0;
+    padding: 0;    
+    display: inline-block;
+    /* height: 100%; */
+}
+
+.topmenu .rightdiv div a
+{
+    margin: 0;
+    padding: 10px 20px;
+    height: 100%;
+}
+
+.topmenu .rightdiv div a:hover
+{
+    background: #777777;
+    height: 100%;
+}
+
+.menu .dropdownmenu
+{
+    display: none !important;
+    z-index: 1;
+}
+
+.menu:hover .dropdownmenu
+{
+    display: inline-block !important
+}
+
+.notification-card
+{
+    width: 100%;
+    height: 100% !important;
+    background: #f0f0f0;
+    padding: 5px !important;
+    margin: 5px !important;
+    border-radius: 4px;
+}
+
+.clearbutton
+{
+    text-align: center;
+    color: lightblue;
+    font-size: 1.1rem;
+}

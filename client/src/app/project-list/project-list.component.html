@@ -1,0 +1,16 @@
+<table class=" table table-striped">
+  <tr>
+    <th>Project Name</th>
+    <th>Status</th>
+    <th>Manager</th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr *ngFor="let project of projectList" (click)="onProjectClick(project)" @slideInOut>
+    <td><span style="cursor: pointer">{{project.projectname}}</span></td>
+    <td>{{project.status}}</td>
+    <td>{{project.projectmanagername}}</td>
+    <td><button type="button" class="btn btn-secondary btn-lg" (click)="onEdit(project)">Edit</button></td>
+    <td><button type="button" class="btn btn-secondary btn-lg" (click)="onDelete($event,project)">Delete</button></td>
+  </tr>
+</table>
+<td><button type="button" class="btn btn-secondary btn-lg" (click)="onNewProject()">NewProject</button></td>

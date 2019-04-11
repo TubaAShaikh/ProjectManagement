@@ -1,0 +1,48 @@
+<div class="topmenu">
+
+  <div class="leftdiv title">{{session.title}}</div>
+  <div class="rightdiv">
+    <div *ngIf="notifications.length>0" class="menu" style="position: relative">
+      <i class="fas fa-bell fa-fw">&nbsp; {{notifications.length}}</i>
+      <div class="dropdownmenu"
+        style="position: absolute; width: 300px; height: fit-content; top: 30px; left:-20px; border:1px solid black; background-color: white; color: black; box-sizing: border-box; box-shadow: 1px 1px 4px #000000dd">
+        <h4>Notifications</h4>
+        <div style=" overflow: scroll; height: 200px;">
+          <div *ngFor="let n of notifications">
+            <div *ngIf="n.type==='PROJECTCREATED'" class="notification-card">
+              <h5>Created Project</h5>
+              {{n.project.projectname}}
+            </div>
+            <div *ngIf="n.type==='TASKASSIGNMENT'" class="notification-card">
+              <h5>Task Assigned</h5>
+              {{n.task.name}}
+            </div>
+            <div *ngIf="n.type==='TASKUPDATED'" class="notification-card">
+              <h5>Task Updated</h5>
+              {{n.task.name}}
+            </div>
+            <div *ngIf="n.type==='PROJECTUPDATED'" class="notification-card">
+              <h5>Project Updated</h5>
+              {{n.project.projectname}}
+            </div>
+            <div *ngIf="n.type==='TASK_DUE'" class="notification-card">
+              <h5>Task Due by {{n.task.duedate}}</h5>
+              {{n.task.taskname}}
+            </div>
+            <div *ngIf="n.type==='PROJECT_DUE'" class="notification-card">
+              <h5>Project Due by {{n.project.duedate}}</h5>
+              {{n.project.projectname}}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div (click)="onClearNotifications()" class="clearbutton">Clear</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a>Welcome- {{session.loggedinuser.username}}</a>
+    </div>
+    <div><a href="" (click)="logout()" target="_self">Logout</a></div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.maincontainer
+{
+    display: flex;
+}
+
+.sidemenu
+{
+    box-sizing: border-box;
+    flex-basis: 18%;
+}
+
+.maincontent
+{
+    box-sizing: border-box;
+    flex-basis: 82%;
+}

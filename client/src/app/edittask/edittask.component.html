@@ -1,0 +1,72 @@
+<p class="h1"> <i>task</i></p>
+{{project.projectname}}
+<table class="table ">
+  <tr>
+    <th>name</th>
+    <th>description</th>
+    <th>dateassigned</th>
+    <th>duedate</th>
+    <th>status</th>
+    <th> File to Upload </th>
+    <th>&nbsp;</th>
+  </tr>
+
+  <tr>
+    
+    <td><span style="cursor: pointer"> {{task.name}}</span></td>
+    <td>{{task.description}}</td>
+    <td>{{task.dateassigned}}</td>
+    <td>{{task.duedate}}</td>
+    <td>{{task.status}}</td>
+  
+   <input #file type="file" style="margin-top: 15px">  <button  class="btn btn-secondary btn-sm " style="float:right"(click)="onUploadFile()">Upload</button><br>
+  </tr>
+  
+  <button type="button" class="btn btn-secondary btn-lg" (click)="ontaskEdit()">Edit</button>
+
+  <!--<button  class="btn btn-secondary btn-lg " style="float:right"(click)="onUploadFile()">Upload</button>-->
+
+
+
+</table>
+
+<h3>Files</h3>
+<div *ngFor="let f of files">
+<div class="filename">  {{f.filename}} <a href="{{baseurl}}download?id={{f._id}}"><i class="fas fa-download"></i></a> </div>
+
+</div>
+
+
+
+<p class="h1"> <i>members</i></p>
+<table class="table">
+  <tr>
+  <tr>
+    <!-- <th>id</th> -->
+    <th>Member Name</th>
+    <th>&nbsp;</th>
+  </tr>
+
+  <tr *ngFor="let user of task.members">
+    <!-- <td>{{user}}</td> -->
+    <td><span *ngIf="membermap[user]">{{membermap[user].name}}<br/>{{membermap[user].email}}</span></td>
+ <td><button *ngIf="session.currentProject.projectmanager===session.loggedinuser._id " class="btn btn-sm btn-danger" (click)="onRemove(user)">&times;Remove</button></td>
+
+  </tr>
+  <!-- <input type="text"    [(ngModel)]="membername" /> -->
+</table>
+
+
+
+
+<div *ngIf="session.usermode==='ADMIN' || session.currentProject.projectmanager===session.loggedinuser._id">
+  <h3>Add New Members</h3>
+    <span *ngFor="let u of users">
+        <input type="checkbox" [(ngModel)]="u.checked" #membercheckbox />{{u.name}} <br/>{{u.email}}<br/>
+      </span>
+      <!-- <select [(ngModel)]="newmemberid" size="5" multiple="true">
+        <option *ngFor="let u of users" value="{{u._id}}">{{u.username}}</option>
+      </select> -->
+    
+      <button type="button" class="btn btn-secondary btn-lg" (click)="onMemberAdd()">Add</button>    
+</div>

@@ -1,0 +1,62 @@
+<p class="h1"> <i>Project</i></p>
+<table class="table ">
+  <tr>
+    <th><span style="cursor: pointer">projectname</span></th>
+    <th>documents</th>
+    <th>customerdetails</th>
+    <th>status</th>
+    <th>&nbsp;</th>
+  </tr>
+
+  <tr>
+    <td><span style="cursor: pointer">{{project.projectname}}</span></td>
+    <td>{{project.documents}}</td>
+    <td>{{project.customerdetails}}</td>
+    <td>{{project.status}}</td>
+
+  </tr>
+  <button type="button" class="btn btn-secondary btn-lg" (click)="onProjectEdit()">Edit</button>
+</table>
+
+<p class="h1"> <i>Tasks</i></p>
+<table class="table">
+  <tr>
+  <tr>
+    <th>name</th>
+    <th>&nbsp;</th>
+  </tr>
+  <ng-template [ngIf]="project.tasks">
+    <tr *ngFor="let task of project.tasks" (click)="ontaskClick(task)">
+      <td><span style="cursor: pointer">{{task.name}}</span></td>
+      <td><button class="btn btn-sm btn-danger" (click)="onRemove($event,task)">&times;Remove</button></td>
+      <!---<td>{{task.position}}</td>-->
+    </tr>
+  </ng-template>
+  <button type="button" class="btn btn-secondary" (click)="onTaskAdd()">Add</button><br>
+  <div *ngIf="session.usermode==='ADMIN' ">
+    <br>
+    <button *ngIf="!project.active" type="button" class="btn btn-success " (click)="onEnable()">Enable</button>
+    <button *ngIf="project.active" type="button" class="btn btn-danger " (click)="onDisable()">Disable</button>
+    </div>
+</table>
+
+
+<!-- *<p class="h1"> <i>Manager</i></p>
+<table class="table ">
+   <tr>
+    <th>ID</th>
+    <th>name</th>
+   
+    <th>&nbsp;</th>
+  </tr>
+ <*ngFor="let Manager of project.Manager">
+  <tr>
+    <td></td>
+    <td>{{project.manager}}</td>
+    
+   
+  </tr>
+  <button type="button" class="btn btn-secondary btn-lg" (click)="onManagerAdd()">Add</button>
+  </table>
+
+<button type="button" class="btn btn-secondary btn-lg" (click)="onBack()">Back</button> -->

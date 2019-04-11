@@ -1,0 +1,98 @@
+<!-- <div class="pull-left panel--head">
+  <a href="/users/dashboard" class="fl-left">
+    
+<img src="https://mazakfiles.blob.core.windows.net/web-site/image/0a43f3c40a8f4995b97eddcf0846a2b9/logo_1.png" class="test_logo_img" style=" height: 30px; widows: 30px;">
+  </a>
+  <h6 class="pull-left" style="color:rgb(248, 103, 45);padding-left:1px;">
+    
+    <span ng-if="examsRegistered.length==1" class="ng-binding ng-scope">Project Management System</span>
+  </h6>
+</div>
+  <table>
+  <tr>
+    <td><button type="button" class="btn btn-primary  btn-lg" (click)="onManageUser()">ManageUser</button></td> 
+  </tr>
+  <tr>
+    <td><button type="button" class="btn btn-secondary btn-lg" (click)="onManageProject()">ManageProject</button></td>
+  </tr>
+</table>
+
+<mat-progress-bar
+          class="example-margin">
+          color='#ff0000'
+          mode='determinate'
+      </mat-progress-bar>
+
+<div ng-controller="lastActivityController" ng-show="sectionMode==1 &amp;&amp; showLA" class="wrapper card-bg-graphics card-ui card-ui-lg ng-scope" ng-style="{'background-image':'url(https://static.pariksha.co/img/chameleon/exam_graphics/banners/'+fillGraphic[chkGrph(subjectId)].srcImage[2]+')','background-color':fillPalette[fillGraphic[chkGrph(subjectId)].index].colors[0],'background-size':'cover'}" style="background-image: url(&quot;https://static.pariksha.co/img/chameleon/exam_graphics/banners/logical-banner_reduced.png&quot;); background-color: rgb(248, 85, 20); background-size: cover;">
+  <div class="row">
+    <div class="pull-left cards-header" style="color:#b2ebf2;padding-bottom:13px;border-bottom:2px solid rgba(0, 0, 0, 0.03);">
+      Last Activity
+      <span style="font-size: 14px;padding-left:10px;">
+        <abbr class="timeago ng-binding" title="2019-01-16T12:24:47Z" style="color:rgba(0, 0, 0, 0.22);">about a month ago</abbr>
+      </span>
+    </div>
+  </div>
+  <div class="pull-left card-last-activity">
+    <div class="subject-logo size__sm">
+      <div class="all-centered sprite-static sprite-rsz_Logical_sm"></div>
+    </div>
+    <div class="last-activity-info">
+      <h3 class="ng-binding">Direction Sense</h3>
+      <p style="font-size:16px;" class="ng-binding">Logical Reasoning and Data Interpretation</p>
+    </div>
+  </div>
+  <a href="#" class="hover-pe-visible always-visible btn-homeBG" ng-click="loClicked(loId,false)">  
+      Continue Practice
+  </a>
+</div> -->
+
+<div class="row" @fade>
+  <div class="col-xl-3 col-sm-6 mb-3">
+    <div class="card text-white bg-primary o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-code">
+          <i class="fas fa-fw fa-folder"></i>
+        </div>
+        <div class="mr-5">Your Projects</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-sm-6 mb-3">
+    <div class="card text-white bg-warning o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fas fa-fw fa-list"></i>
+        </div>
+        <div class="mr-5">YourTasks!</div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<div class="allProjects" @slideInOut>
+  <h2>All Projects</h2>
+  <table class=" table table-striped">
+    <tr>
+      <th>Project Name</th>
+      <th>Status</th>
+      <th>Manager</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr *ngFor="let project of projectList" (click)="onProjectClick(project)">
+      <td><span style="cursor: pointer">{{project.projectname}}</span></td>
+      <td>{{project.status}}</td>
+      <td>{{project.manager}}</td>
+    </tr>
+  </table>
+</div>
+
+
+
+<!-- <td class="sorting_asc" tabindex="0" aria-controls="projects-table" rowspan="1" colspan="1" style="width: 165px;" aria-label="Progress: activate to sort column descending" aria-sort="ascending">Progress</td>  
+  <tr><td class="sorting_1"><div class="progress" style="height: 15px;">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%" title="" data-toggle="tooltip" data-placement="bottom" data-original-title="33%">
+      <span class="sr-only">33% Complete</span>
+    </div>
+  </div></td></tr> -->
+
+  

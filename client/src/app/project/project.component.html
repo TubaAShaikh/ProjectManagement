@@ -1,0 +1,55 @@
+<p class="h1"> <i>Project</i></p>
+<table class="table table-striped table-dark">
+ <!-- <tr>
+    <td>project id</td>
+    <td><input type="number" [(ngModel)]="project.projectid"/></td>
+  </tr>-->
+  <tr>
+    <td>projectname</td>
+    <td><input type="text" [(ngModel)]="project.projectname"/></td>
+  </tr>
+  <tr>
+    <td>project manager</td>
+    <td>
+      <!-- <input type="number" [(ngModel)]="project.projectmanagerid"/> -->
+      <select [(ngModel)]="project.projectmanager">
+        <option value="{{u._id}}_{{u.name}}" *ngFor="let u of users">{{u.name}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td><input type="text" [(ngModel)]="project.description"/></td>
+  </tr>
+  <tr>
+      <td>documents</td>
+      <td><input type="file" [(ngModel)]="project.documents"/></td>
+     
+    </tr>
+  <tr>
+    <td>date assigned</td>
+    <td><input type="date" [(ngModel)]="project.dateassigned"/></td>
+  </tr>
+  <tr>
+    <td>due date</td>
+    <td><input type="date" [(ngModel)]="project.duedate"/></td>
+  </tr>
+  <tr>
+    <td>customer details</td>
+    <td><input type="text" [(ngModel)]="project.customerdetails"/></td>
+  </tr>
+  <tr>
+      <td>status</td>
+      <td><input type="text" [(ngModel)]="project.status"/></td>
+    </tr>
+  <tr>
+    <td><button  type="button" *ngIf="session.currentProject" class="btn btn-success btn-lg" (click)="onCreate()">Update</button></td>
+    <td><button  type="button" *ngIf="session.currentProject===null" class="btn btn-success btn-lg" (click)="onCreate()">Create</button></td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>

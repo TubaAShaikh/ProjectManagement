@@ -1,0 +1,118 @@
+<p class="h1"> <i>Registeration</i></p>
+<table class="table table-striped table-dark">
+  <tr>
+    <td>Profile Image</td>
+    <td><input type="file"></td>
+    <td><img /></td>
+  </tr>
+  <!-- <tr>
+    <td>ID</td>
+    <td><input type="number"></td>
+  </tr> -->
+
+
+  <tr>
+    <td>name</td>
+    <td><input type="text" [(ngModel)]="user.name" /></td>
+
+  </tr>
+  <tr>
+    <td>email</td>
+    <td><input type="text" [(ngModel)]="user.email" /></td>
+  </tr>
+  <tr>
+    <td>contact</td>
+    <td><input type="phone" [(ngModel)]="user.contact" /></td>
+  </tr>
+  <tr>
+    <td>address</td>
+    <td><textarea [(ngModel)]="user.address" ></textarea></td>
+  </tr>
+  <tr>
+    <td>city</td>
+    <td><input type="text"  [(ngModel)]="user.city" /></td>
+  </tr>
+  <tr>
+    <td>state</td>
+    <td>
+      
+      <!-- <div class="form-group col-md-4"> -->
+      <!-- <label for="inputState">State</label> -->
+      <select id="inputstate" [(ngModel)]="user.state">
+        <option selected>Choose...</option>
+        <option>	Andhra Pradesh</option>
+        <option>	Arunachal Pradesh</option>
+       <option>	Assam</option>
+       <option>	Bihar</option>
+       <option>	Chhattisgarh</option>
+       <option>	Goa</option>
+       <option>	Gujarat</option>
+       <option>Haryana</option>
+       <option>	Himachal Pradesh</option>
+       <option>Jammu and Kashmir</option>
+       <option>	Jharkhand</option>
+       <option>	Karnataka</option>
+       <option>Kerala</option>
+       <option>	Madhya Pradesh</option>
+       <option>Maharashtra</option>
+       <option>	Manipur</option>
+       <option>Meghalaya</option>
+       <option>Mizoram</option>
+       <option>Nagaland</option>
+       <option>Odisha</option>
+       <option>Punjab</option>
+       <option>Rajasthan</option>
+       <option>Sikkim</option>
+       <option>	Tamil Nadu</option>
+       <option>Telangana</option>
+       <option>Tripura</option>
+       <option>	Uttar Pradesh</option>
+       <option>Uttarakhand</option>
+       <option>	West Bengal</option>
+      </select>
+      <!-- </div> -->
+    </td>
+  </tr>
+  <tr>
+    <td>qualification</td>
+    <td><input type="text"  [(ngModel)]="user.qualification"/></td>
+  </tr>
+  <tr>
+    <td>domain</td>
+    <td><input type="text"  [(ngModel)]="user.domain"/></td>
+  </tr>
+  <tr>
+    <td>platform</td>
+    <td><input type="text" [(ngModel)]="user.platform" /></td>
+  </tr>
+  <tr>
+    <td>username</td>
+    <td><input type="text" [(ngModel)]="user.username" /></td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td><input type="password"  [(ngModel)]="user.password"/></td>
+  </tr>
+  <tr>
+      <td>
+          <div class="radio">
+               <label><input type="radio" name="optradio">USER</label>
+          </div>
+     </td>
+  </tr>
+  <tr>
+      <td>
+          <div class="radio">
+               <label><input type="radio" name="optradio">ADMN</label>
+          </div>
+     </td>
+  </tr>
+   <tr>
+    <td>
+      <button type="button" *ngIf="session.currentuser===null" class="btn btn-success btn-lg" (click)="onRegister()">Register</button>
+      <button type="button" *ngIf="session.currentuser!==null" class="btn btn-success btn-lg" (click)="onRegister()">Update</button>
+    
+    </td>
+
+  </tr>
+</table>

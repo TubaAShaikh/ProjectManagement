@@ -1,0 +1,22 @@
+{
+	"_id":1,
+	"name": "PMS",
+	"manager": 100,
+    "progress": 50,
+	"status":"",
+	"start_date": "1/1/2019",
+	"end_date":"",
+	"exp_start_date":"",
+	"exp_end_date":"",
+	"documents":[{"filename":""}],
+	"customer":{
+		"name":"",
+		"address":"",
+		"contactperson":"",
+		"email":""		
+	},
+	"tasks":	[
+			{"_id": 200, "name":"Collect data","team_leader":302, "members": [300,301], "status":"In Progress", "documents":[{"filename":""},{"filename":""}], "start_date":"2/1/2019", "end_date":"", "exp_start_date":"", "exp_end_date":"", "progress": 10, "subtasks":[],"active":1}
+		],
+	"active":1
+}

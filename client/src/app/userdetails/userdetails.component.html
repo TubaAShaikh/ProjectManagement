@@ -1,0 +1,47 @@
+<p class="h1" @slideInOut> <i>Personal Details</i></p>
+<table class="table">
+  <tr>
+    <th>name</th>
+    <th>address</th>
+    <th>city</th>
+    <th>state</th>
+    <th>qualification</th>
+    <th>domain</th>
+    <th>platfrom</th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr>
+    <td>{{user.name}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.city}}</td>
+    <td>{{user.state}}</td>
+    <td>{{user.qualification}}</td>
+    <td>{{user.domain}}</td>
+    <td>{{user.platform}}</td>
+
+  </tr>
+  <button type="button" class="btn btn-secondary btn-lg" (click)="onpdEdit()">Edit</button>
+
+
+
+  <p class="h1"> <i>Tasks</i></p>
+  <table class="table">
+    <tr>
+      <th>name</th>
+      <th>project</th>
+      <th>&nbsp;</th>
+    </tr>
+
+    <ng-container *ngFor="let p of project">
+      <ng-container *ngFor="let t of p.tasks">
+        <tr *ngIf="isMember(t.members,user._id)" @slideInOut>
+          <td>{{t.name}}</td>
+          <td>{{p.projectname}}</td>
+        </tr>
+      </ng-container>
+    </ng-container>
+   <!-- <button type="button" class="btn btn-secondary btn-lg" (click)="ontaskAdd()">Add</button>-->
+  </table>
+
+
+  <button type="button" class="btn btn-secondary btn-lg" (click)="onBack()">Back</button>

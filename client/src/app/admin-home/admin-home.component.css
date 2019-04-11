@@ -1,0 +1,16 @@
+.card-ui
+{
+    background-image: url(https://static.pariksha.co/img/chameleon/exam_graphics/banners/logical-banner_reduced.png);
+    background-color: rgb(33, 150, 243);
+    background-size: cover;
+}
+.row{
+    margin-top: 1rem;
+    font-size: 30px;
+    color: #FFF;
+    vertical-align: top;
+    line-height: 100%;
+}
+
+
+

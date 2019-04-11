@@ -1,0 +1,18 @@
+<div class="sidemenu">
+    <img src="https://mazakfiles.blob.core.windows.net/web-site/image/0a43f3c40a8f4995b97eddcf0846a2b9/logo_1.png"
+    class="logo_img">
+  <h1>Project Management System</h1>
+  <ul *ngIf="session.usermode==='ADMIN'">
+    <li><a routerLink='/AdminHome' routerLinkActive='activelink'><i class="fas fa-home" ></i> Home</a></li>
+    <li><a routerLink='/userlist' routerLinkActive='activelink'><i class="fas fa-users"></i> Users</a></li>
+    <li><a routerLink='/ProjectList' routerLinkActive='activelink'><i class="fas fa-code"></i> Projects</a></li>
+  </ul>
+
+  <ul *ngIf="session.usermode==='USER'">
+      <li><a routerLink='/UserHome' routerLinkActive='activelink'><i class="fas fa-home" ></i> Home</a></li>
+<!--<li><a routerLink='/ProjectList' routerLinkActive='activelink'><i class="fas fa-code"></i> Projects</a></li>-->
+    
+    
+  </ul>
+
+</div>
