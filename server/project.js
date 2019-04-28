@@ -18,6 +18,7 @@ module.exports = function (app, db) {
         //console.log('received request');
         // console.log(req);
         let project = req.body;
+        project.active=true;
         //console.log(project);
         //validate project
 
@@ -33,7 +34,7 @@ module.exports = function (app, db) {
                 }
                 else {
 
-                    db.collection('project').findOne({ _id: new mongo.ObjectId(id) }, (err, dbproject) => {
+                    db.collection('project').findOne({ _id: new mongo.ObjectId(id)}, (err, dbproject) => {
                         let notification = { type: 'PROJECTUPDATED', userid: project.projectmanager, project: project, read: false, date: new Date() };
                         database.addnotification(db, notification, null);
 
@@ -68,7 +69,7 @@ module.exports = function (app, db) {
         let id = req.query['id'];
         console.log('project getproject ', id);
 
-        db.collection('project').findOne({ _id: new mongo.ObjectId(id),active:true }, (err, project) => {
+        db.collection('project').findOne({ _id: new mongo.ObjectId(id)}, (err, project) => {
             //console.log(project);
           
             res.send(project);
@@ -97,7 +98,7 @@ module.exports = function (app, db) {
                 });
 
 
-                db.collection('project').findOne({ _id: new mongo.ObjectId(projectid),active:true }, { $set: project }, (err, result) => {
+                db.collection('project').findOne({ _id: new mongo.ObjectId(projectid)}, { $set: project }, (err, result) => {
                     for (let task of project.tasks) {
                         for (let member of task.members) {
                             // let notification = { type: 'PROJECTUPDATED', userid: member, project: project, read: false, date: new Date() };

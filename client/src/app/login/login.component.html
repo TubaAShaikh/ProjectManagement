@@ -16,25 +16,58 @@
 <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
 -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
 <body>
-  <div class="login-popup-wrap new_login_popup"> 
-                          <div class="login-popup-heading text-center">
-                            <h2 ><strong>Project Management System</strong></h2>
-                            <h4><i class="fa fa-lock" aria-hidden="true"></i> Login </h4>                        
-                          </div>
-                          <form id="loginMember" role="form" action="" method="post">
-                              <div>
-                                  <input type="text" class="form-control" [(ngModel)]="user.username" name="username" placeholder="Username">
-                              </div>
-                              <div >
-                                  <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
-                              </div>
-                              <button type="button" class="btn btn-default login-popup-btn" (click)='onlogin()'>Login</button>
-                              <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
-                          </form>
-                          <div class="form-group text-center">
-                          <a class="pwd-forget" href="javascript:void(0)" id="open_forgotPassword">Forgot Password</a>
-                          </div>
-                         
-                      </div>
-                    </body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+				<div class="img">
+				<img alt="" src="https://mazakfiles.blob.core.windows.net/web-site/image/0a43f3c40a8f4995b97eddcf0846a2b9/logo_1.png">
+				</div>
+					<h4 style="color:#f8672D; font:11.2px;">Project Management System</h4>
+				</div>
+
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Member Login
+					</span>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100"  [(ngModel)]="user.username" type="text" name="username" placeholder="Usename">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100"  [(ngModel)]="user.password" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" (click)='onlogin()'>
+							Login
+						</button>
+					</div>
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

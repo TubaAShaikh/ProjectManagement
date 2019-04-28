@@ -12,7 +12,7 @@ module.exports = function (app, db) {
                 console.log('count',count);
                 for (let user of result) {
                     console.log('handling user',user);
-                    db.collection('project').find({ 'tasks.members': { $all: [''+user._id] } }).toArray((err, projectlist) => {
+                    db.collection('project').find({ 'tasks.members': { $all: [''+user._id] },active:true }).toArray((err, projectlist) => {
                         count--;
                         let taskcount = 0;
                         for(let p of projectlist)
@@ -42,6 +42,23 @@ module.exports = function (app, db) {
         let user = req.body;
         console.log(user);
         //validate user
+        //db.collection('user').find({username:user.username,email:user.email}),function(err,user){
+            //if(err){
+                //console.log('signup error');
+                //return done(err);
+            //}
+            //if(user.length!=0){
+                //if(user[0].username){
+                  //  console.log('username already exists!,username:'+username);
+                //}else{
+                  //  console.log('email already exists!,email:'+email);
+                //}
+                //var err=new Error();
+                //err.status=310;
+                //return done(err);
+            //}
+        //}
+        
 
         //let user = { userid: 1, username: 'abcd' };
 

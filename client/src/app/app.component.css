@@ -1,3 +1,4 @@
+
 *
 {
     margin: 0;
@@ -6,6 +7,7 @@
 
 .maincontainer
 {
+    background-color: #ccc;
     display: flex;
 }
 
@@ -20,3 +22,4 @@
     box-sizing: border-box;
     flex-basis: 82%;
 }
+

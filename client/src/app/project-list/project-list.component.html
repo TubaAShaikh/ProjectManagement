@@ -4,6 +4,7 @@
     <th>Status</th>
     <th>Manager</th>
     <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
   <tr *ngFor="let project of projectList" (click)="onProjectClick(project)" @slideInOut>
     <td><span style="cursor: pointer">{{project.projectname}}</span></td>
@@ -13,4 +14,4 @@
     <td><button type="button" class="btn btn-secondary btn-lg" (click)="onDelete($event,project)">Delete</button></td>
   </tr>
 </table>
-<td><button type="button" class="btn btn-secondary btn-lg" (click)="onNewProject()">NewProject</button></td>
+<td><button type="button" class="btn btn-secondary btn-lg" (click)="onNewProject()">New Project</button></td>

@@ -14,6 +14,6 @@ export let slide = trigger('slideInOut',[
         animate('800ms')
     ]),
     transition('* => void',[
-        animate('2000ms ease-in',style({transform:'translateY(-100%)'}))
+        animate('800ms ease-out',style({transform:'translateX(-100%)'}))
     ])
 ])

@@ -46,7 +46,7 @@
   </a>
 </div> -->
 
-<div class="row" @fade>
+<!--<div class="row" @fade>
   <div class="col-xl-3 col-sm-6 mb-3">
     <div class="card text-white bg-primary o-hidden h-100">
       <div class="card-body">
@@ -67,8 +67,7 @@
       </div>
     </div>
   </div>
-  
-</div>
+</div>-->
 <div class="allProjects" @slideInOut>
   <h2>All Projects</h2>
   <table class=" table table-striped">
@@ -81,7 +80,7 @@
     <tr *ngFor="let project of projectList" (click)="onProjectClick(project)">
       <td><span style="cursor: pointer">{{project.projectname}}</span></td>
       <td>{{project.status}}</td>
-      <td>{{project.manager}}</td>
+      <td>{{project.projectmanagername}}</td>
     </tr>
   </table>
 </div>

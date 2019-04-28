@@ -2,20 +2,23 @@
 <table class="table ">
   <tr>
     <th><span style="cursor: pointer">projectname</span></th>
-    <th>documents</th>
-    <th>customerdetails</th>
-    <th>status</th>
-    <th>&nbsp;</th>
+    <th>Manager</th>
+    <th>Date Assigned</th>
+    <th>Due date</th>
+    <th>Customer Name</th>
+    <th>Status</th>
   </tr>
 
   <tr>
     <td><span style="cursor: pointer">{{project.projectname}}</span></td>
-    <td>{{project.documents}}</td>
+    <td>{{project.projectmanagername}}</td>
+    <td>{{project.dateassigned}}</td>
+    <td>{{project.duedate}}</td>
     <td>{{project.customerdetails}}</td>
     <td>{{project.status}}</td>
 
   </tr>
-  <button type="button" class="btn btn-secondary btn-lg" (click)="onProjectEdit()">Edit</button>
+  <button type="button"id="edit" class="btn btn-secondary btn-lg" (click)="onProjectEdit()">Edit</button>
 </table>
 
 <p class="h1"> <i>Tasks</i></p>

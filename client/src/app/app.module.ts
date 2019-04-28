@@ -10,15 +10,13 @@ import { RegComponent } from './reg/reg.component';
 import { ProjectComponent } from './project/project.component';
 import { TaskComponent } from './task/task.component';
 import { FileComponent } from './file/file.component';
-import { MenuComponent } from './menu/menu.component';
+
 import { PmComponent } from './pm/pm.component';
 import { HttpModule } from '@angular/http';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ProjectHomeComponent } from './project-home/project-home.component';
-import { ManageProjectMemberComponent } from './manage-project-member/manage-project-member.component';
-import { ManageProjectTaskComponent } from './manage-project-task/manage-project-task.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 import { SessionService } from './session.service';
 import { UserlistComponent } from './userlist/userlist.component';
@@ -40,15 +38,12 @@ import { from } from 'rxjs';
     ProjectComponent,
     TaskComponent,
     FileComponent,
-    MenuComponent,
     PmComponent,
     AdminHomeComponent,
     ProjectListComponent,
     EditProjectComponent,
     UserHomeComponent,
     ProjectHomeComponent,
-    ManageProjectMemberComponent,
-    ManageProjectTaskComponent,
     UserlistComponent,
     UserdetailsComponent,
     EdittaskComponent,    

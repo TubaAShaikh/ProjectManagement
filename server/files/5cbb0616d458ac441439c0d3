@@ -1,0 +1,63 @@
+//DespiteLAG's config
+
+
+//CROSSHAIR CVARS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cl_crosshairstyle 4
+cl_crosshairsize 1.5
+cl_crosshairthickness 0.9
+cl_crosshairgap -2.5
+cl_crosshair_drawoutline 0
+cl_crosshair_outlinethickness 0.5
+cl_crosshairdot 0
+cl_crosshair_t 0
+cl_crosshaircolor 5
+cl_crosshaircolor_r 0
+cl_crosshaircolor_g 255
+cl_crosshaircolor_b 255
+cl_crosshairalpha 250
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//quick switch 
+alias +knife slot3
+alias -knife lastinv
+bind q +knife
+
+
+// JUMPTHROW GRENADES
+
+alias +jumpthrow "+jump;-attack"
+alias -jumpthrow "-jump"
+bind t +jumpthrow
+
+//C4 Drop 
+bind "c" "use weapon_c4;drop;say_team Bomb is dropped.
+
+// o = Mute team
+bind "o" "mute-team"
+alias "mute-team" "clutchon"
+alias "clutchon" "voice_enable 0; say_team [bind] Hear team = enable; alias mute-team clutchoff"
+alias "clutchoff" "voice_enable 1; say_team [bind] Hear team = disable; alias mute-team clutchon"
+
+// DISPLAY DAMAGE INFO SCRIPT
+
+developer 1
+
+con_filter_enable 2
+
+con_filter_text_out "Player:"
+
+con_filter_text "damage Given"
+
+//Radar (Optimized radar settings)
+cl_teammate_colors_show 2 //Show letters in radar
+cl_hud_radar_scale "1" //Radar size, not too big and not too small
+cl_radar_scale "0.4" //Radar map scale size, 0.4 works on all maps
+cl_radar_always_centered "0" //Centers map instead of player
+cl_radar_icon_scale_min "1" //Minimum player icon scale
+
+
+
+//game instructor
+bind "n" "gameinstructor_enable"
+ 

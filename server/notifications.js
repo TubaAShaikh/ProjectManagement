@@ -28,7 +28,7 @@ module.exports = function (app, db) {
                     //add to result
                 }
 
-                db.collection('project').find({ 'projectmanager': userid }).toArray((err, projectlist) => {
+                db.collection('project').find({ 'projectmanager': userid, active:true }).toArray((err, projectlist) => {
                     for (let project of projectlist) {
                         //calc duedate-now
                         //if less than threshold

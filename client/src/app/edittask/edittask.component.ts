@@ -40,9 +40,16 @@ export class EdittaskComponent implements OnInit {
       console.log(result);
       console.log(result['status']);
       if (result && (result['status'] === 'success')) {
-        this.users = result['users'];
+        let userlist = result['users'];
+        for(let i=userlist.length-1;i>=0;i--)
+        {
+          if(this.task.members.indexOf(userlist[i]['_id']+'')>=0)
+          {
+            userlist.splice(i,1);
+          }
+        }
+        this.users=userlist;
       }
-
     });
 
     this.task = session.currenttask;
@@ -81,6 +88,7 @@ export class EdittaskComponent implements OnInit {
     this.http.post(Constants.BASE_URL+"task/uploadfile",formdata).subscribe((res)=>{
       console.log(res);
     });
+    alert("File succesfully Uploaded!")
   }
 
   ngOnInit() {
@@ -145,6 +153,12 @@ export class EdittaskComponent implements OnInit {
       // }
     }
     event.stopPropagation();
+  }
+
+  formatDate(datetime)
+  {
+    let d=new Date(datetime);
+    return d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
   }
 
 }

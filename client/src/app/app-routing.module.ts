@@ -8,8 +8,6 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ProjectHomeComponent } from './project-home/project-home.component';
-import { ManageProjectMemberComponent } from './manage-project-member/manage-project-member.component';
-import { ManageProjectTaskComponent } from './manage-project-task/manage-project-task.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
@@ -26,8 +24,6 @@ const routes: Routes = [
   { path: 'EditProject', component: EditProjectComponent },
   { path: 'UserHome', component: UserHomeComponent },
   { path: 'ProjectHome', component: ProjectHomeComponent },
-  { path: 'ManageProjectMember', component: ManageProjectMemberComponent },
-  { path: 'ManageProjectTask', component: ManageProjectTaskComponent },
   {path:'userlist', component: UserlistComponent},
   {path:'userdetails',component:UserdetailsComponent},
   {path:'edittask',component:EdittaskComponent}

@@ -1,5 +1,5 @@
 let mongo = require('mongodb');
-
+let express = require('express');
 module.exports = function (app, db) {
 
     app.post('/file/addfile', (req, res) => {
@@ -10,7 +10,7 @@ module.exports = function (app, db) {
             }
             else {
                 res.send({ status: 'success' });
-
+                express.redirect('back');
             }
         });
     });

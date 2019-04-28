@@ -91,6 +91,7 @@ export class EditProjectComponent implements OnInit
         //}
       });
       event.stopPropagation();
+      alert("Task has been deleted!")
     }
     //onMemberAdd(){
     //this.router.navigateByUrl('/register');
@@ -98,7 +99,7 @@ export class EditProjectComponent implements OnInit
 
   }
 
-  onEnable()
+ onEnable()
   {
     this.project.active = true;
     this.http.post(Constants.BASE_URL + 'project/updateproject', this.project).subscribe((res) =>

@@ -15,10 +15,11 @@ module.exports = function (app, db) {
         });
     });
     app.post('/task/addtask', (req, res) => {
-        console.log('received request');
+        console.log('received request: add task');
         // console.log(req);
         let task = req.body;
         let projectid = task.projectid;
+        console.log('projectid',projectid);
 //        console.log(task);
         //validate task
         // db.collection('task').findOne({ _id: new mongo.ObjectId(id) }, (err, task) => {
@@ -28,8 +29,13 @@ module.exports = function (app, db) {
 
         let project = {};
         //retrive project
-        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid),active :true }, (err, project) => {
+        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid)}, (err, project) => {
 //            console.log(project);
+
+            if(err)
+            {
+                console.log('error in add task',err,err.message);
+            }
 
             if (!project.tasks) {
                 project.tasks = [];
@@ -129,7 +135,7 @@ module.exports = function (app, db) {
 
         let project = {};
         //retrive project
-        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid) ,active:true}, (err, project) => {
+        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid) }, (err, project) => {
             console.log(project);
 
             if (!project.tasks) {
@@ -194,7 +200,7 @@ module.exports = function (app, db) {
 
         let project = {};
         //retrive project
-        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid),active:true }, (err, project) => {
+        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid)}, (err, project) => {
 //            console.log(project);
 
             if (!project.tasks) {
@@ -250,7 +256,7 @@ module.exports = function (app, db) {
 
         let project = {};
         //retrive project
-        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid),active:true }, (err, project) => {
+        db.collection('project').findOne({ _id: new mongo.ObjectId(projectid)}, (err, project) => {
             console.log(project);
 
             if (!project.tasks) {
@@ -306,7 +312,7 @@ module.exports = function (app, db) {
         let filename = req.body['filename'];
         console.log('req.files', req.files);
         //add entry to file collection
-        db.collection('files').insertOne({ filename: filename, taskid: taskid }, (err, result) => {
+        db.collection('files').insertOne({ filename: filename, taskid: taskid, datetime:new Date().getTime() }, (err, result) => {
 
             if (err) {
                 res.send({ status: "error" });

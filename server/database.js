@@ -24,19 +24,28 @@ module.exports={
             if(notification.type==='PROJECTUPDATED')
             {
                 subject='Project Updated';
-             message='You have to complete this project within 3 months.You must use ASP.NET as front end and MongoDB as backend.If any query please contact us';
+             message='The project you have been assigned has now been updated.You have to complete this project within 3 months.You must use ASP.NET as front end and MongoDB as backend.If any query please contact us';
             }
             
             if(notification.type==='TASKASSIGNMENT')
             {
                 subject='Task Assigned';
-                message=notification.project.projectmanagername+ ' , has assigned you to tasks.';
+                message='A task has been assigned to you.';
             }
             if(notification.type==='TASKUPDATED')
             {
                 subject='Task Updated';
+            
             }
-              
+            if(notification.type==='PROJECT_DUE')
+            {
+                  subject='PROJECT_DUE';
+            }
+
+            if(notification.type==='TASK_DUE')
+            {
+                subject='TASK_DUE';
+            }
             db.collection('user').findOne({_id:new mongo.ObjectId(notification.userid)},(err,user)=>{
 
             email(user.email,subject,message);

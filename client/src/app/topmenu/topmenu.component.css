@@ -42,7 +42,7 @@
 
 .topmenu .rightdiv div a:hover
 {
-    background: #777777;
+    text-decoration-color: red;
     height: 100%;
 }
 
@@ -70,6 +70,5 @@
 .clearbutton
 {
     text-align: center;
-    color: lightblue;
     font-size: 1.1rem;
 }

@@ -4,6 +4,8 @@
     <th>name</th>
     <th>project</th>
     <th>taskcount</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
   <tr *ngFor="let user of userlist" (click)="onuserClick(user)" @slideInOut>
     <td>{{user.id}}</td>
@@ -14,4 +16,4 @@
     <td><button type="button" class="btn btn-secondary btn-lg" (click)="onDelete($event,user)">Delete</button></td>
   </tr>
 </table>
-<td><button type="button" class="btn btn-secondary btn-lg" (click)="onNewuser()">Newuser</button></td>
+<td><button type="button" class="btn btn-secondary btn-lg" (click)="onNewuser()">Add User</button></td> 

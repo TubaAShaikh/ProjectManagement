@@ -1,40 +1,7 @@
-<!-- Hello
-<app-login></app-login>
-<app-reg></app-reg>
-<app-project></app-project>
-<app-task></app-task>
-<app-file></app-file> -->
 
 <div class="container-fluid">
 
   <app-login *ngIf="session.loggedin==false"></app-login>
-
-
-  <!-- <div class="row justify-content-md-center">
-
-
-  </div> -->
-  <!-- <div *ngIf="session.loggedin==false">
-    <p class="h1"><i>login</i></p>
-    <table class="">
-      <tr>
-        <td>username</td>
-        <td><input type="text" [(ngModel)]="user.username" /></td>
-      </tr>
-      <tr>
-        <td>password</td>
-        <td><input type="password" [(ngModel)]="user.password" /></td>
-      </tr>
-      <tr>
-        <td><button type="button" class="btn btn-success btn-lg" (click)="onlogin()">Login</button> New Here?<button
-            type="button" class="btn btn-primary btn-lg">Sign Up</button></td>
-      </tr>
-    </table>
-    <div *ngIf="message"
-      [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">
-      {{message.text}}</div>
-  </div> -->
-
   <div class="maincontainer" *ngIf="session.loggedin===true">
     <app-sidemenu class="sidemenu"></app-sidemenu>
     <div class="maincontent" style="height:100vh; overflow: scroll">

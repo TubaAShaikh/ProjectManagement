@@ -1,5 +1,5 @@
 <p class="h1"> <i>Project</i></p>
-<table class="table table-striped table-dark">
+<table class="table table-striped">
  <!-- <tr>
     <td>project id</td>
     <td><input type="number" [(ngModel)]="project.projectid"/></td>
@@ -12,7 +12,7 @@
     <td>project manager</td>
     <td>
       <!-- <input type="number" [(ngModel)]="project.projectmanagerid"/> -->
-      <select [(ngModel)]="project.projectmanager">
+      <select [(ngModel)]="project.projectmanager" style="width: 180px;">
         <option value="{{u._id}}_{{u.name}}" *ngFor="let u of users">{{u.name}}</option>
       </select>
     </td>
@@ -21,11 +21,7 @@
     <td>description</td>
     <td><input type="text" [(ngModel)]="project.description"/></td>
   </tr>
-  <tr>
-      <td>documents</td>
-      <td><input type="file" [(ngModel)]="project.documents"/></td>
-     
-    </tr>
+  
   <tr>
     <td>date assigned</td>
     <td><input type="date" [(ngModel)]="project.dateassigned"/></td>

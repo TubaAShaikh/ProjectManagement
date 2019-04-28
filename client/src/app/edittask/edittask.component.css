@@ -1,0 +1,29 @@
+.table-borderless{
+    margin-left: 20px;
+}
+td,th{
+    padding: 10px;
+}
+
+
+button{
+    margin-left: 20px;
+}
+p{
+    margin-left: 20px;
+}
+h3{
+    margin-left: 20px;
+}
+.filename{
+    margin-left: 20px;
+}
+.file{
+    margin-left: 20px;
+}
+.datetime{
+    margin-left: 20px;
+}
+strong{
+    margin-left: 20px;
+}
